@@ -1,19 +1,13 @@
 "use strict";
-function isEnoughCapacity(products, containerSize) {    
-products = {
-apples: 2,
-grapes: 4,
+function isEnoughCapacity(products, containerSize) {
+  let totalFull = 0;
+
+  for (let product in products) {
+    totalFull += products[product];
+  }
+
+  return totalFull <= containerSize;
 }
-containerSize == Number (0 > products );
-for(const key in products){
-
-}
-
-return containerSize;
-
-
-}
-
 
 // Напиши функцію isEnoughCapacity(products, containerSize), яка обчислює, чи помістяться всі товари в контейнер при пакуванні.
 // Функція оголошує два параметри:
@@ -23,18 +17,10 @@ return containerSize;
 
 // Візьми код нижче і встав після оголошення своєї функції для перевірки коректності її роботи. У консоль будуть виведені результати її викликів.
 
-console.log(
-    isEnoughCapacity({ apples: 2, grapes: 3, carrots: 1 }, 8)
-  ); // true
-  
-  console.log(
-    isEnoughCapacity({ apples: 4, grapes: 6, lime: 16 }, 12)
-  ); // false
-  
-  console.log(
-    isEnoughCapacity({ apples: 1, lime: 5, tomatoes: 3 }, 14)
-  ); // true
-  
-  console.log(
-    isEnoughCapacity({ apples: 18, potatoes: 5, oranges: 2 }, 7)
-  ); // false
+console.log(isEnoughCapacity({ apples: 2, grapes: 3, carrots: 1 }, 8)); // true
+
+console.log(isEnoughCapacity({ apples: 4, grapes: 6, lime: 16 }, 12)); // false
+
+console.log(isEnoughCapacity({ apples: 1, lime: 5, tomatoes: 3 }, 14)); // true
+
+console.log(isEnoughCapacity({ apples: 18, potatoes: 5, oranges: 2 }, 7)); // false
